@@ -14,22 +14,22 @@ form.addEventListener('submit', function(event){
     console.log(price);
 
     if (inputAge < 18){
-        let discount = ((inputKm * 0,21) * 20 / 100);
-        price = (price - discount).toFixed(2);
+        let discount = ((inputKm * 0.21) * 20 / 100);
+        price = (price - discount);
         
         console.log('Il prezzo scontato per gli under 18 è:',price);
     }
 
     else if (inputAge > 65){
-        let discount = ((inputKm * 0,21) * 40 / 100);
-        price = (price - discount).toFixed(2);
+        let discount = ((inputKm * 0.21) * 40 / 100);
+        price = (price - discount);
         console.log('Il prezzo scontato per i superiori di 65 anni è:',price);
     }
 
-    if (price < 10){ // il prezzo non scende sotto gli €10
-        price = (10).toFixed(2);
-    }
-    document.getElementById('finalprice').innerHTML = price;
+    // if (price < 10){ // il prezzo non scende sotto gli €10
+    //     price = (10).toFixed(2);
+    // }
+    document.getElementById('finalprice').innerHTML = price.toFixed(2);
 });
 
 
